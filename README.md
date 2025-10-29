@@ -1,0 +1,140 @@
+# Spatiotemporal Prediction
+
+This project implements ConvLSTM and Self-Attention ConvLSTM models for spatiotemporal sequence prediction.
+
+The code is currently under preparation. Coming soon!
+
+## Author
+- **Gang YANG**
+- **Contact**: yanggang_ce@163.com
+
+## Project Structure
+
+```
+├── data_loader/
+│   └── data_loader_MovingMNIST.py    # Image-based dataset loader
+├── model/
+│   ├── convLSTM_cell.py              # Standard ConvLSTM cell implementation
+│   ├── sa_convLSTM_cell.py           # Self-Attention ConvLSTM cell
+│   ├── Encode2Decode.py              # SA-ConvLSTM encoder-decoder model
+│   └── seq2seq.py                    # ConvLSTM encoder-decoder model
+├── utils/
+│   ├── earlystopping.py              # Early stopping mechanism
+│   └── utils.py                      # Evaluation metrics (MSE, PSNR, SSIM)
+├── train.py                      # Training script
+├── test.py                       # Testing script
+├── convert_npy_to_images.py          # Data conversion script (NPY to images)
+├── test_dataloader.py                # Test script for data loader validation
+├── predict.py                        # Dedicated prediction script for trained models
+├── training_config.py                # Training configuration management
+└── README.md                         # This file
+```
+
+## Models
+
+### 1. ConvLSTM
+- Standard Convolutional LSTM for spatiotemporal modeling
+- Uses convolutions instead of fully connected layers
+- Maintains spatial structure while processing temporal sequences
+
+### 2. Self-Attention ConvLSTM (SA-ConvLSTM)
+- Enhanced ConvLSTM with self-attention mechanisms
+- Includes Self-Attention Memory (SAM) module
+- Uses zigzag recurrent transition mechanism
+- Better captures long-range spatial dependencies
+
+## Features
+
+- **Teacher Forcing**: Configurable teacher forcing rate during training
+- **Early Stopping**: Prevents overfitting with patience-based stopping
+- **TensorBoard Logging**: Comprehensive training visualization
+- **Multiple Metrics**: MSE and SSIM evaluation
+- **Frame-wise Analysis**: Detailed per-frame performance metrics
+
+## Usage
+
+### Data Preparation
+
+### Training
+
+#### Standard Training
+```bash
+python train.py
+```
+
+
+### Testing
+```bash
+python test.py
+```
+
+### Prediction (New!)
+```bash
+# Predict from a directory containing 10 sequential images (00.png to 09.png)
+python predict.py --model_path ./results_sa_test1/model_save/your_model.pt --input_dir ./data/images/test/09001 --output_dir ./predictions --visualize
+```
+
+## Configuration
+
+Key hyperparameters can be modified in the main functions:
+
+- `BATCH_SIZE`: Training batch size (default: 8)
+- `IMG_SIZE`: Image dimensions (default: 256x256)
+- `INPUT_WINDOW_SIZE`: Input sequence length (default: 10)
+- `OUTPUT_WINDOW_SIZE`: Prediction sequence length (default: 10)
+- `EPOCHS`: Number of training epochs (default: 500)
+- `LEARNING_RATE`: Learning rate (default: 1e-3)
+- `MODEL_TYPE`: Model type ('sa_convlstm' or 'convlstm')
+
+## Dataset
+
+The Moving MNIST dataset consists of:
+- 2564x256 grayscale images (can be downsampled to 64x64)
+- 20-frame sequences (10 input + 10 prediction)
+- Moving handwritten digits
+- Image-based directory structure for better visualization
+
+### Data Structure
+
+The dataset is organized in the following directory structure:
+```
+data/
+├── train/
+│   ├── 00001/
+│   │   ├── 00.png
+│   │   ├── 01.png
+│   │   └── ... (up to 19.png)
+│   ├── 00002/
+│   └── ...
+└── test/
+    ├── 09001/
+    └── ...
+```
+
+
+**Important**: The model supports various image sizes. For 256x256 images, they are encoded to 64x64 feature maps internally through 4 downsampling layers.
+
+## Requirements
+
+- PyTorch
+- NumPy
+- scikit-image
+- matplotlib
+- tensorboardX
+- Pillow (PIL)
+- tqdm (for conversion progress)
+
+## Output
+
+The models generate:
+- Trained model checkpoints (`.pt` files)
+- Prediction arrays (`.npy` files)
+- Training progress plots
+- TensorBoard logs
+- Frame-wise metric visualizations
+
+## License
+
+This project is for academic and research purposes.
+
+Copyright belongs to Gang YANG and use of this code for commercial applications or profit-driven ventures requires explicit permission from the author.
