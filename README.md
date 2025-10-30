@@ -85,20 +85,12 @@ data/
 - Pillow (PIL)
 - tqdm (for conversion progress)
 
-## Output
-
-The models generate:
-- Trained model checkpoints (`.pt` files)
-- Prediction arrays (`.npy` files)
-- Training progress plots
-- TensorBoard logs
-- Frame-wise metric visualizations
-
 ## License
 
 This project is for academic and research purposes.
 
 
 Copyright belongs to Gang YANG and use of this code for commercial applications or profit-driven ventures requires explicit permission from the author.
+
 
 
