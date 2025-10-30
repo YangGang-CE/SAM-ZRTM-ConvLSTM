@@ -8,28 +8,6 @@ The code is currently under preparation. Coming soon!
 - **Gang YANG**
 - **Contact**: yanggang_ce@163.com
 
-## Project Structure
-
-```
-├── data_loader/
-│   └── data_loader_MovingMNIST.py    # Image-based dataset loader
-├── model/
-│   ├── convLSTM_cell.py              # Standard ConvLSTM cell implementation
-│   ├── sa_convLSTM_cell.py           # Self-Attention ConvLSTM cell
-│   ├── Encode2Decode.py              # SA-ConvLSTM encoder-decoder model
-│   └── seq2seq.py                    # ConvLSTM encoder-decoder model
-├── utils/
-│   ├── earlystopping.py              # Early stopping mechanism
-│   └── utils.py                      # Evaluation metrics (MSE, PSNR, SSIM)
-├── train.py                      # Training script
-├── test.py                       # Testing script
-├── convert_npy_to_images.py          # Data conversion script (NPY to images)
-├── test_dataloader.py                # Test script for data loader validation
-├── predict.py                        # Dedicated prediction script for trained models
-├── training_config.py                # Training configuration management
-└── README.md                         # This file
-```
-
 ## Models
 
 ### 1. ConvLSTM
@@ -136,5 +114,6 @@ The models generate:
 ## License
 
 This project is for academic and research purposes.
+
 
 Copyright belongs to Gang YANG and use of this code for commercial applications or profit-driven ventures requires explicit permission from the author.
