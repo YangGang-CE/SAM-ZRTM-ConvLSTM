@@ -29,7 +29,7 @@ The code is currently under preparation. Coming soon!
 - **Multiple Metrics**: MSE and SSIM evaluation
 - **Frame-wise Analysis**: Detailed per-frame performance metrics
 
-### Prediction (New!)
+### Prediction
 ```bash
 # Predict from a directory containing 10 sequential images (00.png to 09.png)
 python predictor.py --model_path ./checkpoint.pt --input_dir ./data/ --output_dir ./predictions --visualize
@@ -100,4 +100,5 @@ This project is for academic and research purposes.
 
 
 Copyright belongs to Gang YANG and use of this code for commercial applications or profit-driven ventures requires explicit permission from the author.
+
 
