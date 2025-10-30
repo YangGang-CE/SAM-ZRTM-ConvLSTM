@@ -2,7 +2,7 @@
 
 This project implements ConvLSTM and Self-Attention ConvLSTM models for spatiotemporal sequence prediction.
 
-The code is currently under preparation. Coming soon!
+The complete code is still under preparation at present. Coming soon!
 
 ## Author
 - **Gang YANG**
@@ -91,6 +91,7 @@ This project is for academic and research purposes.
 
 
 Copyright belongs to Gang YANG and use of this code for commercial applications or profit-driven ventures requires explicit permission from the author.
+
 
 
 
