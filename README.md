@@ -1,4 +1,4 @@
-# Spatiotemporal Prediction
+# 3D-point cloud-based spatiotemporal series model for tunnel rock mass discontinuities prediction
 
 This project implements ConvLSTM and Self-Attention ConvLSTM models for spatiotemporal sequence prediction.
 
@@ -91,6 +91,7 @@ This project is for academic and research purposes.
 
 
 Copyright belongs to Gang YANG and use of this code for commercial applications or profit-driven ventures requires explicit permission from the author.
+
 
 
 
