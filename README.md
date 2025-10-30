@@ -29,27 +29,10 @@ The code is currently under preparation. Coming soon!
 - **Multiple Metrics**: MSE and SSIM evaluation
 - **Frame-wise Analysis**: Detailed per-frame performance metrics
 
-## Usage
-
-### Data Preparation
-
-### Training
-
-#### Standard Training
-```bash
-python train.py
-```
-
-
-### Testing
-```bash
-python test.py
-```
-
 ### Prediction (New!)
 ```bash
 # Predict from a directory containing 10 sequential images (00.png to 09.png)
-python predict.py --model_path ./results_sa_test1/model_save/your_model.pt --input_dir ./data/images/test/09001 --output_dir ./predictions --visualize
+python predictor.py --model_path ./checkpoint.pt --input_dir ./data/ --output_dir ./predictions --visualize
 ```
 
 ## Configuration
@@ -117,3 +100,4 @@ This project is for academic and research purposes.
 
 
 Copyright belongs to Gang YANG and use of this code for commercial applications or profit-driven ventures requires explicit permission from the author.
+
