@@ -5,7 +5,7 @@ This project implements ConvLSTM and Self-Attention ConvLSTM models for spatiote
 The complete code is still under preparation at present. Coming soon!
 
 ## Author
-- **Gang YANG**
+- **Gang YANG, Tianbin Li**
 - **Contact**: yanggang_ce@163.com
 
 ## Models
@@ -91,6 +91,7 @@ This project is for academic and research purposes.
 
 
 Copyright belongs to Gang YANG and use of this code for commercial applications or profit-driven ventures requires explicit permission from the author.
+
 
 
 
